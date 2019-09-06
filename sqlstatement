@@ -1,0 +1,31 @@
+INSERT INTO lambtonstudents (studentsid, studentlastname, studentfirstname)
+VALUES ('1', 'smith' , 'john');
+
+INSERT INTO lambtonstudents (studentsid, studentlastname, studentfirstname)
+VALUES ('2', 'sergio' , 'sin');
+
+INSERT INTO lambtonstudents (studentsid, studentlastname, studentfirstname)
+VALUES ('3', 'simar' , 'jot');
+
+INSERT INTO lambtonstudents (studentsid, studentlastname, studentfirstname)
+VALUES ('4', 'jashan' , 'singh');
+
+INSERT INTO lambtonstudents (studentsid, studentlastname, studentfirstname)
+VALUES ('5', 'smith' , 'satbir');
+
+INSERT INTO lambtonstudents (studentsid, studentlastname, studentfirstname)
+VALUES ('6', 'bichon' , 'hey');
+
+INSERT INTO lambtonstudents (studentsid, studentlastname, studentfirstname)
+VALUES ('7', 'xun' , 'chai');
+
+INSERT INTO lambtonstudents (studentsid, studentlastname, studentfirstname)
+VALUES ('8', 'simran' , 'jeet');
+
+INSERT INTO lambtonstudents (studentsid, studentlastname, studentfirstname)
+VALUES ('9', 'michael' , 'voucakes');
+
+INSERT INTO lambtonstudents (studentsid, studentlastname, studentfirstname)
+VALUES ('10', 'peter' , 'sun');
+
+selesct * from students;
