@@ -29,4 +29,17 @@ PRIMARY KEY (pgid)
 
 
 
+to view
+create view Firstview as select * from thisyear;
 
+select ([ Sold Price]) from firstview;
+
+
+select ([Sold Price])
+FROM thisyear;
+
+
+
+to delete any column
+ALTER TABLE STUDENTS
+DROP COLUMN term;
