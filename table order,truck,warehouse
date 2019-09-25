@@ -1,0 +1,50 @@
+CREATE TABLE ORDERS (
+item_number varchar(20),
+truck_number varchar(20),
+order_id varchar(20),
+
+
+)
+
+
+
+insert into truck(trucknumber,drivername,ordernumber)
+values('111','sam','41');
+
+insert into truck(trucknumber,drivername,ordernumber)
+values('112','micahel','42');
+
+insert into truck(trucknumber,drivername,ordernumber)
+values('113','micke','43');
+
+insert into truck(trucknumber,drivername,ordernumber)
+values('114','john','44');
+
+insert into truck(trucknumber,drivername,ordernumber)
+values('115','tim','45');
+
+
+insert into orders(item_number,truck_number,order_id)
+values('1','10','A111');
+
+insert into orders(item_number,truck_number,order_id)
+values('2','11','A112');
+
+
+insert into orders(item_number,truck_number,order_id)
+values('3','12','A113');
+
+
+insert into orders(item_number,truck_number,order_id)
+values('4','13','A114');
+
+
+insert into orders(item_number,truck_number,order_id)
+values('5','14','A115');
+
+
+
+
+select * from warehouse as w,truck as t,orders as o
+
+where w.itemnumber= o.item_number and t.ordernumber=o.order_id
