@@ -1,0 +1,16 @@
+--full join--
+select l.[Sold Price],l.days,t.ListPrice
+from lastyear l
+full join Thisyear t
+on l.days = t.days
+
+
+
+BEGIN
+DECLARE @CAT INT= 9
+DECLARE @DOG INT = 20
+PRINT @CAT + @DOG;
+END;
+GO
+
+
