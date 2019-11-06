@@ -12,6 +12,26 @@ select count(*)  from dbo.data
 where solddate < '8/16/2019';
 
 
+
+
 select type, description, AVG([sold price]) from data
 group by type, Description
-order by AVG([sold price]);
+order by AVG([sold price]) desc;
+
+select type, description, AVG([sold price]), avg(bedroom) bedroom from data
+group by type, Description
+order by AVG([sold price]) desc
+
+
+select type, description, AVG([sold price]), avg(bedroom) bedroom from data
+where solddate > '9/1/2019'
+group by type, Description
+order by AVG([sold price]) desc;
+
+
+select count(type),type, description, AVG([sold price]), avg(bedroom) bedroom from data
+where solddate between '9/1/2019' and '9/15/2019'
+group by type, Description
+order by AVG([sold price]) desc;
+
+
