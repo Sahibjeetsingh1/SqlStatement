@@ -35,3 +35,5 @@ group by type, Description
 order by AVG([sold price]) desc;
 
 
+select * from data where 
+left(streetname, 1) = 'A';
