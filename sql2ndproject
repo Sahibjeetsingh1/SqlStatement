@@ -1,0 +1,12 @@
+use AdventureWorks2012;
+select * from data;
+
+select * from dbo.data
+where solddate between '8/1/2019' and '8/15/2019'
+order by solddate;
+
+select count(*)  from dbo.data
+where solddate between '8/1/2019' and '8/30/2019';
+
+select count(*)  from dbo.data
+where solddate < '8/16/2019';
