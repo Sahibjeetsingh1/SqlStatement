@@ -10,3 +10,8 @@ where solddate between '8/1/2019' and '8/30/2019';
 
 select count(*)  from dbo.data
 where solddate < '8/16/2019';
+
+
+select type, description, AVG([sold price]) from data
+group by type, Description
+order by AVG([sold price]);
