@@ -1,48 +1,48 @@
 use AdventureWorks2012;
 select * from data;
-
+-------------------------------------------------------------------------------------------------
 select * from dbo.data
 where solddate between '8/1/2019' and '8/15/2019'
 order by solddate;
-
+-------------------------------------------------------------------------------------------------
 select count(*)  from dbo.data
 where solddate between '8/1/2019' and '8/30/2019';
-
+---------------------------------------------------------------------------------------------------
 select count(*)  from dbo.data
 where solddate < '8/16/2019';
 
 
-
+------------------------------------------------------------------------------------------------------
 
 select type, description, AVG([sold price]) from data
 group by type, Description
 order by AVG([sold price]) desc;
-
+----------------------------------------------------------------------------------------------------
 select type, description, AVG([sold price]), avg(bedroom) bedroom from data
 group by type, Description
 order by AVG([sold price]) desc
 
-
+------------------------------------------------------------------------------------------------------
 select type, description, AVG([sold price]), avg(bedroom) bedroom from data
 where solddate > '9/1/2019'
 group by type, Description
 order by AVG([sold price]) desc;
 
-
+------------------------------------------------------------------------------------------------------
 select count(type),type, description, AVG([sold price]), avg(bedroom) bedroom from data
 where solddate between '9/1/2019' and '9/15/2019'
 group by type, Description
 order by AVG([sold price]) desc;
 
-
+--------------------------------------------------------------------------------------------------------
 select * from data where 
 left(streetname, 1) = 'A';
-
+----------------------------------------------------------------------------------------------------------
     -- Show only Month of August
 select * from data
 where month(solddate) >=8
 order by solddate desc;
-
+-----------------------------------------------------------------------------------------------------------
     -- Show only day of August
 select * from data
 where day(solddate) <=8
@@ -50,16 +50,50 @@ order by solddate desc;
 
 --averAGE SELLING PRICE PER TYPE OF HOUSE 
 -- per number of bedrooms
-
+-----------------------------------------------------------------------------------------------------------
 select Type, avg([sold price]) AS SOLDPRICEAVERAGE 
 from data
 where month(solddate) BETWEEN 7 AND 9
 group by Type
 order by avg([Sold Price]
 
-
+----------------------------------------------------------------------------------------------------------------
 select Type, description, bedroom, Baths, Basement1, avg([sold price]) AS SOLDPRICEAVERAGE 
 from data
 where month(solddate) BETWEEN 7 AND 9
 group by Type, Description, bedroom, Baths, Basement1
 order by avg([Sold Price]) desc;
+------------------------------------------------------------------------------------------------------------------
+
+select e.department, d.department, e.employeeFirstName , e.dateofbirth 
+from dbo.tblemployee as e, dbo.tbldepartment as d
+where e.department = d.department
+and year (e.dateofbirth) > 1970
+and month(e.dateofbirth) in (1,2,3);
+
+--------------------------------------------------------------------------------------------------------------------
+
+create view Employeeprofile as
+select * from dbo.tblemployee as e 
+where e.employeelastname > 'm';
+
+drop view Employeeprofile;
+
+create view WinningEmployees1 as 
+select * from employeeprofile
+where EmployeeFirstName in ('jane', 'Rob');
+
+select * from WinningEmployees1;
+
+-----------------------------------------------------------------------------------------------------------------------
+
+create view employeeprofile as 
+select e.employeenumber, e.employeefirstname, e.employeelastname, e.dateofbirth, d.departmenthead
+from tblemployee as e, tbldepartment as d
+where dateofbirth > '1980';
+
+--------------------------------------------------------------------------------------------------------------------------
+select e.employeenumber, e.employeefirstname, e.employeelastname, e.dateofbirth, d.departmenthead
+from tblemployee as e, tbldepartment as d
+where e.department = d.department;
+
