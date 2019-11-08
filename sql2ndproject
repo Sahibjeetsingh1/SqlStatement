@@ -37,3 +37,29 @@ order by AVG([sold price]) desc;
 
 select * from data where 
 left(streetname, 1) = 'A';
+
+    -- Show only Month of August
+select * from data
+where month(solddate) >=8
+order by solddate desc;
+
+    -- Show only day of August
+select * from data
+where day(solddate) <=8
+order by solddate desc;
+
+--averAGE SELLING PRICE PER TYPE OF HOUSE 
+-- per number of bedrooms
+
+select Type, avg([sold price]) AS SOLDPRICEAVERAGE 
+from data
+where month(solddate) BETWEEN 7 AND 9
+group by Type
+order by avg([Sold Price]
+
+
+select Type, description, bedroom, Baths, Basement1, avg([sold price]) AS SOLDPRICEAVERAGE 
+from data
+where month(solddate) BETWEEN 7 AND 9
+group by Type, Description, bedroom, Baths, Basement1
+order by avg([Sold Price]) desc;
