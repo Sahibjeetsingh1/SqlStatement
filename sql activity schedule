@@ -1,0 +1,30 @@
+select * from classrooms;
+select * from students;
+--------------------------------------------------------
+
+select count(*)
+from students, classrooms;
+----------------------------------------------------------
+drop table students;
+---------------------------------------------------------
+select * from students
+order by studentid;
+---------------------------------------------------
+insert into students
+values('109','George','python','G3');
+----------------------------------------------------------
+delete from students 
+where studentname = 'george'
+------------------------------------------------------------
+alter table students
+drop studentrecords;
+------------------------------------------------
+select * from students, classrooms
+where students.StudentName= 'larry';
+-------------------------------------------------
+select * from students, classrooms
+where classrooms.SectionNumber= students.SectionNumber and classrooms.CourseNumber= students.CourseNumber
+----------------------------------------------------------------
+insert into students
+values('steve','python','G3');
+--------------------------------------------------
